@@ -32,15 +32,15 @@ gallery.style.padding = "0"
 gallery.style.display = "flex"
 gallery.style.flexWrap = "wrap";
 gallery.style.justifyContent = "center";
-gallery.style.rowGap = "48px";
-gallery.style.columnGap = "12px";
+gallery.style.gap = "48px 24px";
 images.forEach((img) => {
   const galleryItem = document.createElement("li");
   galleryItem.classList.add("gallery-item");
+  gallery.append(galleryItem);
   const pic = document.createElement("img");
   pic.src = img.url;
   pic.alt = img.alt;
   pic.style.width = "360px"
   pic.style.height = "300px"
-  gallery.append(galleryItem, pic);
+  galleryItem.append(pic);
  })
