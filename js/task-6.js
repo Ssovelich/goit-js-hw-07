@@ -9,11 +9,13 @@ const createBtn = document.querySelector('button');
 const boxes = document.querySelector('#boxes');
 const destroyBtn = document.querySelector('button + button');
 
-let boxesArr = [];
+
 const createBoxes = amount => {
+  let boxesArr = [];
+  boxes.innerHTML = '';
   if (amount >= 1 && amount <= 100 ) {
     for (let i = 0; i < amount; i++) {
-      boxesArr.push(`<div class="boxes-item" width="${30 + i * 10}" height="${30 + i * 10}"></div>`)
+      boxesArr.push(`<div class="boxes-item" style="width:${30 + i * 10}px; height:${30 + i * 10}px; background: ${getRandomHexColor()};"></div>`)
     }
 };
   return boxes.innerHTML = boxesArr.join('')
@@ -25,19 +27,9 @@ const onFieldInput = () => {
 
 createBtn.addEventListener('click', onFieldInput);
 
-const boxEl = boxes.childNodes;
-// console.log(boxEl);
-boxEl.forEach(el => {
-  el.style.backgroundColor = getRandomHexColor();
-})
-// console.log(boxEl.length);
 const destroyBoxes = () => {
-  for (let i = 0; i < boxEl.length; i++) {
-    boxEl[i].remove();
-  }
+  boxes.innerHTML = '';
+  inputElement.value = '';
 };
   
-destroyBtn.addEventListener('click', destroyBoxes)
-
-
-
+destroyBtn.addEventListener('click', destroyBoxes);

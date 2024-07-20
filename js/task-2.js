@@ -24,17 +24,16 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
-//* Функція для створення карточки createGalleryCard(pictureInfo)
+
 const createGalleryCard = pictureInfo => {
-//* Повернення шаблоного рядка з розміткою
   return `
   <li class='gallery-item'>
     <img src='${pictureInfo.url}' alt='${pictureInfo.alt}' width=360 height=300>
   </li>
   `;
 };
-//* Створення масиву рядків із елементами
+
 const galleryCardsTemplate = images.map(imgInfo => createGalleryCard(imgInfo)).join('');
-//* Вставка елементів на сторінку (insertAdjacentHTML)
+
 const galleryListEl = document.querySelector('.gallery');
 galleryListEl.insertAdjacentHTML('beforeend', galleryCardsTemplate);
