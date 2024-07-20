@@ -24,7 +24,7 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
-//* Функція для створення карточки createGalleryCard(cardInfo)
+//* Функція для створення карточки createGalleryCard(pictureInfo)
 const createGalleryCard = pictureInfo => {
 //* Повернення шаблоного рядка з розміткою
   return `
