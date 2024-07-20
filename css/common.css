@@ -152,6 +152,10 @@ h1 {
   font-weight: 500;
   font-size: 16px;
 }
+.change-color:hover,
+.change-color:focus {
+  background-color: #6c8cff;
+}
 #controls {
   display: flex;
   align-items: flex-start;
