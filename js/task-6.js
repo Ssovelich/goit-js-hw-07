@@ -12,7 +12,7 @@ const destroyBtn = document.querySelector('button + button');
 
 const createBoxes = amount => {
   let boxesArr = [];
-  boxes.innerHTML = '';
+  destroyBoxes();
   if (amount >= 1 && amount <= 100 ) {
     for (let i = 0; i < amount; i++) {
       boxesArr.push(`<div class="boxes-item" style="width:${30 + i * 10}px; height:${30 + i * 10}px; background: ${getRandomHexColor()};"></div>`)
@@ -21,15 +21,17 @@ const createBoxes = amount => {
   return boxes.innerHTML = boxesArr.join('')
 };
 
-const onFieldInput = () => {
+const onCreateBtnClick = () => {
   createBoxes(inputElement.value);
 };
 
-createBtn.addEventListener('click', onFieldInput);
+createBtn.addEventListener('click', onCreateBtnClick);
 
 const destroyBoxes = () => {
   boxes.innerHTML = '';
   inputElement.value = '';
 };
   
-destroyBtn.addEventListener('click', destroyBoxes);
+destroyBtn.addEventListener('click', () => {
+  destroyBoxes();
+});
