@@ -70,6 +70,9 @@ body {
   justify-content: center;
   gap: 48px 24px;
 }
+.gallery-item img {
+  display: block;
+}
 #name-input {
   width: 360px;
   height: 40px;
